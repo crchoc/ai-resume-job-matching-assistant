@@ -4,6 +4,7 @@ __pycache__/
 .env
 *.db
 data/uploads/*
+!data/uploads/.gitkeep
 data/outputs/*
 .DS_Store
 .vscode/
