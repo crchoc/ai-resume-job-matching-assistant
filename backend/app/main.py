@@ -1,17 +1,23 @@
 from fastapi import FastAPI
 
-from backend.app.api import resumes
+from backend.app.api import jobs, resumes
 
 app = FastAPI(
     title="AI Resume & Job Matching Assistant",
     description="A portfolio project for resume and job description matching.",
-    version="0.2.0",
+    version="0.3.0",
 )
 
 app.include_router(
     resumes.router,
     prefix="/api/resumes",
     tags=["resumes"],
+)
+
+app.include_router(
+    jobs.router,
+    prefix="/api/jobs",
+    tags=["jobs"],
 )
 
 
@@ -26,5 +32,5 @@ def root():
 def health_check():
     return {
         "status": "ok",
-        "version": "0.2.0"
+        "version": "0.3.0"
     }

@@ -24,6 +24,12 @@ A portfolio project that analyzes a resume PDF and a job description to calculat
 - Extracted text from PDF using `pypdf`
 - Added `/api/resumes/upload` endpoint
 
+### v0.3
+
+- Added job description analysis API
+- Extracted required and preferred skills from job descriptions
+- Added simple keyword extraction
+- Added `/api/jobs/analyze` endpoint
 
 ## How to Run
 
@@ -45,3 +51,4 @@ http://127.0.0.1:8000/docs
 |---|---|---|
 | GET | `/health` | Check server status |
 | POST | `/api/resumes/upload` | Upload resume PDF and extract text |
+| POST | `/api/jobs/analyze` | Analyze job description text |
