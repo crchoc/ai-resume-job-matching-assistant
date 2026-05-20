@@ -10,7 +10,7 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="AI Resume & Job Matching Assistant",
     description="A portfolio project for resume and job description matching.",
-    version="0.6.5",
+    version="0.7.0",
 )
 
 app.include_router(
