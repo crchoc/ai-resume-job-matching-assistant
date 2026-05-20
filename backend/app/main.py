@@ -1,11 +1,11 @@
 from fastapi import FastAPI
 
-from backend.app.api import jobs, resumes
+from backend.app.api import jobs, match, resumes
 
 app = FastAPI(
     title="AI Resume & Job Matching Assistant",
     description="A portfolio project for resume and job description matching.",
-    version="0.3.0",
+    version="0.4.0",
 )
 
 app.include_router(
@@ -20,6 +20,12 @@ app.include_router(
     tags=["jobs"],
 )
 
+app.include_router(
+    match.router,
+    prefix="/api/match",
+    tags=["match"],
+)
+
 
 @app.get("/")
 def root():
@@ -32,5 +38,5 @@ def root():
 def health_check():
     return {
         "status": "ok",
-        "version": "0.3.0"
+        "version": "0.4.0"
     }
